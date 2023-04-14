@@ -1,0 +1,34 @@
+---
+import PillLink from "./PillLink.astro";
+
+interface Props {
+  title: string;
+  keywords?: { label: string; link: string }[];
+}
+const { title, keywords } = Astro.props;
+---
+
+<section
+  class="mt-32 flex flex-col items-center justify-center gap-4 first:mt-24 last:mb-16 sm:flex-row sm:gap-8 even:sm:flex-row-reverse lg:gap-11 first:lg:mt-32"
+>
+  <div class="w-full px-4 sm:w-1/2">
+    <slot name="svg" />
+  </div>
+  <div class="w-full px-4 text-center sm:w-1/2 space-y-4">
+    <h2
+      class="font-cunia text-2xl uppercase text-primary-600 md:text-3xl lg:text-4xl"
+    >
+      {title}
+    </h2>
+    <slot />
+    {
+      keywords && (
+        <div class="flex flex-wrap justify-center gap-3">
+          {keywords.map((keyword) => (
+            <PillLink label={keyword.label} link={keyword.link} />
+          ))}
+        </div>
+      )
+    }
+  </div>
+</section>

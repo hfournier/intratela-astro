@@ -1,0 +1,13 @@
+---
+const year = new Date().getFullYear();
+import NavSub from "./NavSub.astro";
+---
+
+<footer class="bg-stone-800 text-stone-100">
+  <div
+    class="container mx-auto flex max-w-screen-lg flex-col items-center justify-center gap-6 p-4 text-sm"
+  >
+    <NavSub />
+    &copy; {year} Intratela Technologies
+  </div>
+</footer>

@@ -1,0 +1,24 @@
+{
+  "links": [
+    {
+      "href": "/",
+      "text": "Home"
+    },
+    {
+      "href": "/it-support/",
+      "text": "IT Support"
+    },
+    {
+      "href": "/web-development/",
+      "text": "Web Development"
+    },
+    {
+      "href": "/app-development/",
+      "text": "App Development"
+    },
+    {
+      "href": "/contact/",
+      "text": "Contact"
+    }
+  ]
+}

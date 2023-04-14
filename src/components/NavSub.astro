@@ -1,0 +1,19 @@
+---
+import json from "../data/links.json";
+---
+
+<nav aria-label="Footer Navigation" class="flex gap-6">
+  {
+    json.links.map(
+      ({ href, text }) =>
+        Astro.url.pathname !== href && (
+          <a
+            href={href}
+            class="font-medium decoration-primary-500 underline-offset-4 hover:text-primary-500 hover:underline"
+          >
+            {text}
+          </a>
+        )
+    )
+  }
+</nav>

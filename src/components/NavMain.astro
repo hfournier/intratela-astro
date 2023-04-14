@@ -1,0 +1,23 @@
+---
+import json from "../data/links.json";
+---
+
+<nav
+  aria-label="Main Navigation"
+  class="absolute right-3 top-[4.5rem] -z-10 flex -translate-y-[310px] flex-col gap-x-8 gap-y-4 bg-stone-900/90 py-4 opacity-0 transition-all duration-700 ease-in-out lg:static lg:z-0 lg:flex lg:w-auto lg:translate-y-0 lg:flex-row lg:items-center lg:py-0 lg:opacity-100"
+>
+  {
+    json.links.map(
+      ({ href, text }) =>
+        href !== "/" && (
+          <a
+            href={href}
+            class="rounded px-4 py-1 text-right text-lg font-semibold text-stone-200 decoration-primary-500 underline-offset-4 hover:bg-stone-800 hover:text-primary-500 focus:outline-none aria-[current='page']:underline lg:mt-0 lg:px-0 lg:hover:bg-transparent"
+            aria-current={Astro.url.pathname === href ? "page" : null}
+          >
+            {text}
+          </a>
+        )
+    )
+  }
+</nav>

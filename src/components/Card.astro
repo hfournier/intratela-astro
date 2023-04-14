@@ -1,0 +1,23 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+
+interface Props {
+  title: string;
+  body: string;
+  cta: { label: string; link: string };
+}
+const { title, body, cta } = Astro.props;
+---
+
+<div
+  class="mb-16 mt-8 flex w-2/3 flex-col gap-4 pr-4 text-center text-stone-800 sm:mb-0 sm:w-48 lg:w-64"
+>
+  <slot name="svg" />
+  <h3 class="font-cunia text-secondary-700">{title}</h3>
+  <p class="flex-grow">
+    {body}
+  </p>
+  <ButtonLink href={cta.link} size="sm">
+    {cta.label}
+  </ButtonLink>
+</div>

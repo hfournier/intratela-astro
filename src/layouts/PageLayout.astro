@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const { title, description, seoDescription } = Astro.props;
+---
+
+<BaseLayout title={title} description={seoDescription}>
+  <h1
+    class="mt-16 px-4 pb-4 font-cunia text-3xl uppercase text-primary-600 md:mt-24 md:text-4xl lg:mt-32 lg:text-5xl"
+  >
+    {title}
+  </h1>
+  <p class="px-4"><Fragment set:html={description} /></p>
+
+  <slot />
+</BaseLayout>
